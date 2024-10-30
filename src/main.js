@@ -1,5 +1,5 @@
 import * as bootstrap from 'bootstrap/dist/js/bootstrap.bundle';
-import './assets/main.css'
+import './assets/main.scss'
 
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
