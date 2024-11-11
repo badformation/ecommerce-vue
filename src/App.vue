@@ -1,9 +1,11 @@
 <template>
-    <Header />
-    <main class="mt-4">
-        <RouterView />
-    </main>
-    <Footer />
+    <div id="app" class="d-flex flex-column min-vh-100">
+        <Header />
+        <main class="mt-4 flex-grow-1">
+            <RouterView />
+        </main>
+        <Footer />
+    </div>
 </template>
 
 <script setup>

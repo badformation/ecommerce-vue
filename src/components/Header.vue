@@ -1,8 +1,12 @@
 <template>
     <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-dark-subtle justify-content-between">
+        <nav
+            class="navbar navbar-expand-lg navbar-light bg-dark-subtle justify-content-between"
+        >
             <div class="container-fluid px-lg-5 px-3">
-                <RouterLink class="navbar-brand me-0" to="/">🛍️ La Boutique</RouterLink>
+                <RouterLink class="navbar-brand me-0" to="/"
+                    >🛍️ La Boutique</RouterLink
+                >
 
                 <!-- Le bouton burger apparait uniquement sur mobile -->
                 <button
@@ -20,33 +24,24 @@
                 <!-- Menu burger : apparaîtra uniquement sur mobile -->
                 <div class="collapse navbar-collapse" id="navbarNavDropdown">
                     <div class="navbar-nav mx-auto">
-                        <RouterLink class="nav-link" to="/">Accueil</RouterLink>
-                        <RouterLink class="nav-link" to="/products">Produits</RouterLink>
-                        <RouterLink class="nav-link" to="/contact">Contact</RouterLink>
-                        <RouterLink class="nav-link" to="/cart">Panier</RouterLink>
+                        <RouterLink
+                            v-for="(link, index) in navLinks"
+                            :key="index"
+                            class="nav-link"
+                            :to="link.path"
+                        >
+                            {{ link.title }}
+                        </RouterLink>
                     </div>
 
                     <div class="navbar-nav gap-1">
-                        <RouterLink to="/login">
-                        <button
-                            type="button"
-                            class="btn btn-primary nav-link"
-                            data-bs-toggle="modal"
-                            data-bs-target="#loginModal"
+                        <RouterLink
+                            v-for="(link, index) in authLinks"
+                            :key="index"
+                            :class="link.class"
+                            :to="link.path"
                         >
-                            Connexion
-                        </button>
-                        </RouterLink>
-
-                        <RouterLink to="/register">
-                            <button
-                                type="button"
-                                class="btn btn-dark nav-link pe-0"
-                                data-bs-toggle="modal"
-                                data-bs-target="#registerModal"
-                            >
-                                Inscription
-                            </button>
+                            {{ link.title }}
                         </RouterLink>
                     </div>
                 </div>
@@ -55,4 +50,17 @@
     </header>
 </template>
 
-<script setup></script>
+<script setup>
+    import { reactive } from 'vue'
+    const navLinks = reactive([
+        { title: 'Accueil', path: '/' },
+        { title: 'Produits', path: '/products' },
+        { title: 'Contact', path: '/contact' },
+        { title: 'Panier', path: '/cart' },
+    ])
+
+    const authLinks = reactive([
+        { title: 'Connexion', path: '/login', class: 'btn btn-primary' },
+        { title: 'Inscription', path: '/register', class: 'btn btn-dark' },
+    ])
+</script>

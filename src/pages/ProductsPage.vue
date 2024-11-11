@@ -1,5 +1,5 @@
 <template>
-   <h2 class="text-center mt-2">Séléctionnez votre produit</h2>
+   <h1 class="text-center mt-2">Séléctionnez votre produit</h1>
         <div class="row w-100">
             <div class="col-12 pe-0">
                 <form class="">
