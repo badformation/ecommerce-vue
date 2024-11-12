@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    background: linear-gradient(90deg, rgba(50,36,32,1) 0%, rgba(85,66,61,1) 30%, rgba(85,66,61,1) 70%, rgba(50,36,32,1) 100%);
+    background: linear-gradient(90deg, rgb(50, 36, 32) 0%, rgba(85,66,61,1) 30%, rgba(85,66,61,1) 70%, rgba(50,36,32,1) 100%);
 }
 
 .navbar,
@@ -18,8 +18,46 @@ body {
     color: #fffffe;
     border-radius: 50px;
     border: 1px solid transparent;
+    transition: all 0.4s ease;
+    text-transform: uppercase;
 }
 
-h1 {
-    
+h1, .navbar-brand, h6 {
+    color: $title;
+}
+
+.navbar-brand:hover {
+    color: $btn-hover;
+}
+
+p {
+    color: $text;
+}
+
+.card-text {
+    color: $btn-text;
+}
+
+.grid-cart {
+    border-radius: 21px;
+    background-color: $btn-hover;
+}
+
+.search-btn {
+    background-color: $btn-hover;
+}
+.search-btn:hover {
+    border: 1px solid $btn-hover;
+    color: $text;
+}
+
+.page-link {
+    color: $btn-text;
+}
+
+.show-btn {
+    border-radius: 20px;
+    text-decoration: none;
+    border: 1px solid $bg;
+    color: $btn-text;
 }

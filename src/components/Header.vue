@@ -27,7 +27,7 @@
                         <RouterLink
                             v-for="(link, index) in navLinks"
                             :key="index"
-                            class="nav-link"
+                            class="nav-link text-center"
                             :to="link.path"
                         >
                             {{ link.title }}

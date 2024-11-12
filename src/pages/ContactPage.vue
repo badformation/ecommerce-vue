@@ -2,7 +2,7 @@
     <div class="container" >
         
         <h1 class="text-center pt-5">Contactez-nous</h1>
-        <div class="text-center">Vous avez une question ? Un problème à nous signaler ?</div>
+        <p class="text-center">Vous avez une question ? Un problème à nous signaler ?</p>
         <div class="container-fluid my-3 px-5">
             <div class="row">
                 <div class="mb-3 col-lg-6">
