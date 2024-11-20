@@ -30,8 +30,9 @@
                             class="nav-link text-center"
                             :to="link.path"
                         >
-                            {{ link.title }}
+                            {{ link.title }}<span v-if="link.title === 'Panier' && totalItems"> ({{ totalItems }})</span>
                         </RouterLink>
+                        
                     </div>
 
                     <div class="navbar-nav gap-1">
@@ -43,6 +44,7 @@
                         >
                             {{ link.title }}
                         </RouterLink>
+                        
                     </div>
                 </div>
             </div>
@@ -52,6 +54,9 @@
 
 <script setup>
     import { reactive } from 'vue'
+    // On importe notre store "cart"
+    import { useCartStore } from '../stores/cart'
+
     const navLinks = reactive([
         { title: 'Accueil', path: '/' },
         { title: 'Produits', path: '/products' },
@@ -63,4 +68,10 @@
         { title: 'Connexion', path: '/login', class: 'btn btn-primary' },
         { title: 'Inscription', path: '/register', class: 'btn btn-dark' },
     ])
+
+    // On initialise le store pour pouvoir l'utiliser
+    const cartStore = useCartStore()
+
+    // On récupère les données calculées du panier
+    const totalItems = cartStore.totalItems
 </script>
