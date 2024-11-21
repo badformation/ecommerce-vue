@@ -1,8 +1,10 @@
 <template>
     <div class="card p-0 rounded-3 border-0">
-        <a href="product.html">
-            <img class="card-img-top rounded-top-3" :src="image" alt="..."
-        /></a>
+        <RouterLink to="/product">
+            <a>
+                <img class="card-img-top rounded-top-3" :src="image" alt="..."
+            /></a>
+        </RouterLink>
         <div class="card-body">
             <div class="d-flex justify-content-between">
                 <h5 class="card-title">{{ title }}</h5>
@@ -18,6 +20,5 @@
 
 <script setup>
     const props = defineProps(['id', 'image', 'title', 'price', 'description'])
-    
-    
+
 </script>
